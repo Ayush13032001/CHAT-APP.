@@ -45,7 +45,7 @@ app.use("/api/messages", messageRouter);
 
 // Connect to MongoDB and start server
 const PORT = process.env.PORT || 5000;
-
+if(process.env.NODE_ENV !== "production"){
 (async () => {
   try {
     await connectDB();
@@ -55,4 +55,7 @@ const PORT = process.env.PORT || 5000;
   } catch (err) {
     console.error("❌ MongoDB connection failed:", err.message);
   }
-})();
+})()
+}
+
+export default server;
