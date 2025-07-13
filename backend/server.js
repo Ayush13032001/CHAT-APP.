@@ -44,7 +44,7 @@ app.use("/api/auth", userRouter);
 app.use("/api/messages", messageRouter);
 
 // Connect to MongoDB and start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 if(process.env.NODE_ENV !== "production"){
 (async () => {
   try {
